@@ -2,7 +2,7 @@ app.get("/survey", function(req, res) {
     res.render("survey");
 });
 
-app.use("/home", function(req, res, next) {
+app.use("/", function(req, res, next) {
     res.render("home");
 });
 
