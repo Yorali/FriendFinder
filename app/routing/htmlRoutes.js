@@ -1,9 +1,15 @@
-app.get("/survey", function(req, res) {
-    res.render("survey");
-});
+// Necessary for correct file-path procurement
+var path = require('path');
 
-app.use("/", function(req, res, next) {
-    res.render("home");
-});
+module.exports = function(app) {
 
-app.listen(4000)
+    app.get("/survey", function(req, res) {
+        res.sendFile(path.join(__dirname, "/../public/survey.html"));
+    });
+
+    // Can leave blank for default
+    app.use(function(req, res) {
+        res.sendFile(path.join(__dirname, "/../public/home.html"));
+    });
+
+};
