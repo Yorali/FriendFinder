@@ -28,8 +28,16 @@ module.exports = function(app) {
         for (var i = 0; i < friends.length; i++) {
             for (var j = 0; j < friends[i].scores.length; j++) {
                 // Matching done by lowest amount of difference
-                var tally = Math.abs(talliedUser - scores[j]);
+                var tally = talliedUser - scores[j];
                 console.log(tally);
+                if (tally < talliedUser) {
+                    talliedUser = tally;
+                }
+                else if ((j === 9) && (tally < talliedUser)) {
+                    talliedUser = tally;
+                    idealCompanion = friends[i];
+                    console.log(idealCompanion);
+                };
                 
             }
             
