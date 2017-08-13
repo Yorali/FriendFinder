@@ -18,7 +18,7 @@ var friends =
     }
 ]
 
-module.exports = friendArray;
+module.exports = friends;
 
 // Put elsewhere --from class
 // app.post(/friends, req, res) {
